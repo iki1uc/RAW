@@ -1,1 +1,6 @@
+export const Q_zone = {
+    id: "Q",
+    priority: 1,
+    position: 81
+};
 
