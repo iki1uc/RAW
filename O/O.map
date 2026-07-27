@@ -1,1 +1,5 @@
+export const OMap = {
+    1: "O.rbit",
+    2: "X.zone"
+};
 
