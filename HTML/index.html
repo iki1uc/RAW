@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RESPO System Start</title>
+    <script type="module" src="../CORE/system.start.js"></script>
+</head>
+<body>
+    <h1>System gestartet</h1>
+    <div id="output"></div>
+
+    <script type="module">
+        import { systemStart } from "../CORE/system.start.js";
+        const result = systemStart();
+        document.getElementById("output").innerText = JSON.stringify(result, null, 2);
+    </script>
+</body>
+</html>
