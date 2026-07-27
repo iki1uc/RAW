@@ -1,1 +1,7 @@
+export const TMPIndex = [
+    "operator.tmp", "RESPO_ARG_SCAN.tmp", "SCHACH.tmp",
+    "arg.tmp", "bauer.tmp", "dame.tmp", "pferd.tmp",
+    "nord.tmp", "ost.tmp", "west.tmp", "sued.tmp",
+    "tetriz.tmp", "skat.tmp", "score.tmp"
+];
 
