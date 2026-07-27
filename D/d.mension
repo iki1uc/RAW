@@ -1,1 +1,9 @@
+export const D_mension = {
+    axis: "D",
+    type: "dimension",
+    id: 1,
+    calibrate(room) {
+        return room * 1.0;
+    }
+};
 
