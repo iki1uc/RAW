@@ -1,1 +1,6 @@
+export const UZone = {
+    id: "U",
+    priority: 5,
+    position: 10
+};
 
