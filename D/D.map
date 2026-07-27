@@ -1,1 +1,6 @@
+export const DMap = {
+    1: "d.mension",
+    2: "U.mension",
+    3: "O.rbit"
+};
 
