@@ -1,1 +1,11 @@
+export const TMPMap = {
+    "bauer.tmp": 12,
+    "dame.tmp": 14,
+    "pferd.tmp": 22,
+    "operator.tmp": 40,
+    "nord.tmp": 10,
+    "ost.tmp": 18,
+    "west.tmp": 73,
+    "sued.tmp": 63
+};
 
