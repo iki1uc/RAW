@@ -1,1 +1,6 @@
+export const X_zone = {
+    id: "X",
+    priority: 2,
+    position: 81
+};
 
