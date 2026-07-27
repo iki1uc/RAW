@@ -1,2 +1,27 @@
-<div id="room-display"></div>
-<script src="../TMP/operator.tmp"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RESPO Room Viewer</title>
+    <script type="module" src="../CORE/system.start.js"></script>
+</head>
+
+<body>
+    <h1>RESPO – Room Viewer</h1>
+
+    <div id="room-output"></div>
+
+    <script type="module">
+        import { systemStart } from "../CORE/system.start.js";
+        import { calibrateRoom } from "../CORE/system.start.js";
+
+        const system = systemStart();
+
+        const rooms = [81, 9, 1];
+
+        const result = rooms.map(r => calibrateRoom(r));
+
+        document.getElementById("room-output").innerText =
+            JSON.stringify(result, null, 2);
+    </script>
+</body>
+</html>
