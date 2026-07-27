@@ -1,1 +1,5 @@
+export const ZoneMap = {
+    Q: 81,
+    X: 81
+};
 
