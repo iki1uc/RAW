@@ -1,0 +1,6 @@
+OPERATOR = {
+    active: "Q",
+    set(op) {
+        this.active = op;
+    }
+};
