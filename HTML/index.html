@@ -1,17 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RESPO System Start</title>
+    <title>RESPO – System Root</title>
+    <meta charset="UTF-8">
+
+    <!-- Systemstart laden -->
     <script type="module" src="../CORE/system.start.js"></script>
+
+    <style>
+        body { font-family: monospace; background:#111; color:#0f0; padding:20px; }
+        pre { background:#000; padding:20px; border:1px solid #0f0; }
+        h1 { color:#0f0; }
+    </style>
 </head>
+
 <body>
-    <h1>System gestartet</h1>
-    <div id="output"></div>
+    <h1>RESPO – System Root</h1>
+
+    <h2>Systemstart</h2>
+    <pre id="system"></pre>
+
+    <h2>Raum‑Kalibrierung</h2>
+    <pre id="rooms"></pre>
+
+    <h2>Schachbrett‑Mapping</h2>
+    <pre id="mapping"></pre>
+
+    <h2>X81/Q81 Konflikt‑Simulation</h2>
+    <pre id="conflict"></pre>
+
+    <h2>PQ‑Status</h2>
+    <pre id="pq"></pre>
 
     <script type="module">
         import { systemStart } from "../CORE/system.start.js";
-        const result = systemStart();
-        document.getElementById("output").innerText = JSON.stringify(result, null, 2);
+        import { calibrateRoom } from "../CORE/system.start.js";
+        import { TMPMap } from "../TMP/TMP.map";
+        import { XQConflict } from "../ZONE/ZONE.conflict.js";
+        import { PQAssist } from "../ZONE/PQ.zone";
+
+        // 1. Systemstart
+        const sys = systemStart();
+        document.getElementById("system").innerText =
+            JSON.stringify(sys, null, 2);
+
+        // 2. Alle Räume automatisch kalibrieren
+        const rooms = [81, 9, 1].map(r => calibrateRoom(r));
+        document.getElementById("rooms").innerText =
+            JSON.stringify(rooms, null, 2);
+
+        // 3. Schachbrett‑Mapping visualisieren
+        document.getElementById("mapping").innerText =
+            JSON.stringify(TMPMap, null, 2);
+
+        // 4. X81/Q81 Konflikt‑Simulation
+        const conflict = XQConflict();
+        document.getElementById("conflict").innerText = conflict;
+
+        // 5. PQ‑Status
+        const pq = rooms.map(r => PQAssist(r.id));
+        document.getElementById("pq").innerText =
+            JSON.stringify(pq, null, 2);
     </script>
 </body>
 </html>
